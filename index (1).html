@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>القرآن الكريم — The Noble Qur'an</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ░░ SIDEBAR ░░ -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-wrap">
+        <span class="logo-arabic">القرآن</span>
+        <span class="logo-eng">The Noble Qur'an</span>
+      </div>
+      <button id="sidebar-close" class="icon-btn" aria-label="Close sidebar">✕</button>
+    </div>
+
+    <div class="sidebar-search-wrap">
+      <input id="surah-filter" type="text" placeholder="Filter surahs…" autocomplete="off" />
+    </div>
+
+    <nav id="surah-list" class="surah-list">
+      <div class="loading-surahs">Loading surahs…</div>
+    </nav>
+  </aside>
+  <div id="overlay" class="overlay"></div>
+
+  <!-- ░░ MAIN ░░ -->
+  <div class="layout">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button id="menu-btn" class="icon-btn menu-btn" aria-label="Open sidebar">☰</button>
+
+      <div class="topbar-center">
+        <span id="current-surah-name" class="topbar-title">Select a Surah</span>
+      </div>
+
+      <div class="topbar-right">
+        <button id="search-toggle" class="icon-btn" title="Search">⌕</button>
+        <select id="view-toggle" class="view-select" title="Display mode">
+          <option value="both">Arabic + Translation</option>
+          <option value="arabic">Arabic only</option>
+          <option value="translation">Translation only</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Search Panel -->
+    <div id="search-panel" class="search-panel hidden">
+      <div class="search-inner">
+        <input id="search-input" type="text" placeholder="Search the Qur'an in English…" autocomplete="off" />
+        <button id="search-btn" class="search-go">Search</button>
+        <button id="search-close" class="icon-btn">✕</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+
+    <!-- Content Area -->
+    <main id="main-content" class="main-content">
+
+      <!-- Welcome Screen -->
+      <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-inner">
+          <div class="bismillah-large">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <p class="bismillah-trans">In the name of Allah, the Most Gracious, the Most Merciful</p>
+          <div class="welcome-divider"></div>
+          <p class="welcome-hint">Select a Surah from the menu to begin reading</p>
+          <button class="open-sidebar-cta" id="open-sidebar-cta">Browse Surahs →</button>
+        </div>
+      </div>
+
+      <!-- Surah Content -->
+      <article id="surah-view" class="surah-view hidden">
+        <div class="surah-header">
+          <div class="surah-meta-number" id="meta-number"></div>
+          <div class="surah-meta-arabic" id="meta-arabic"></div>
+          <div class="surah-meta-english" id="meta-english"></div>
+          <div class="surah-meta-sub" id="meta-sub"></div>
+          <div class="surah-bismillah" id="surah-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        </div>
+
+        <div id="ayahs-container" class="ayahs-container"></div>
+
+        <div class="surah-nav">
+          <button id="prev-surah" class="nav-btn">← Previous Surah</button>
+          <button id="next-surah" class="nav-btn">Next Surah →</button>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <!-- Scroll to top -->
+  <button id="scroll-top" class="scroll-top hidden" title="Back to top">↑</button>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
